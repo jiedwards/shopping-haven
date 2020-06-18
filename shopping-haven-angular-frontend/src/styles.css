@@ -134,7 +134,7 @@ aside.menu-sidebar.d-none.d-lg-block.clr{
  */
 
 .header-desktop{
-    background:#0da8e4;
+    background:#ff3a3a;
     -webkit-box-shadow:0 2px 5px 0 rgba(0,0,0,.1);
     -moz-box-shadow:0 2px 5px 0 rgba(0,0,0,.1);
     box-shadow:0 2px 5px 0 rgba(0,0,0,.1);
@@ -378,7 +378,7 @@ input.au-input.au-input-xl{
 }
 
 .navbar-sidebar .navbar-list li a:hover{
-    color:#0da8e4
+    color:#e40d0d
 }
 
 /* 
@@ -717,7 +717,7 @@ table.table.table-bordered th{
  .price{
     margin:15px 0 0;
     font-weight:800;
-    color:#0da8e4
+    color:#e40d0d
 }
 .detail-section{
     margin-top:60px
