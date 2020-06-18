@@ -6,10 +6,12 @@ import { AppComponent } from './app.component';
 import { ProductListComponent } from './components/product-list/product-list.component';
 import { ProductService } from './service/product.service';
 import { Routes, RouterModule } from '@angular/router';
-import { ProductCategoryMenuComponent } from './components/product-category-menu/product-category-menu.component'
+import { ProductCategoryMenuComponent } from './components/product-category-menu/product-category-menu.component';
+import { SearchComponent } from './components/search/search.component'
 
 //Defines what happens when the endpoint routes are triggered
 const routes: Routes = [
+  {path: 'search/:keyword', component: ProductListComponent},
   {path: 'category/:id/:name', component: ProductListComponent},
   {path: 'category', component: ProductListComponent},
   {path: 'products', component: ProductListComponent},
@@ -21,7 +23,8 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     ProductListComponent,
-    ProductCategoryMenuComponent
+    ProductCategoryMenuComponent,
+    SearchComponent
   ],
   imports: [
     RouterModule.forRoot(routes),

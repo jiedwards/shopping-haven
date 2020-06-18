@@ -15,8 +15,13 @@
                 <div class="price">{{ product.unitPrice | currency:'GBP' }}</div>
                 <a href="#" class="btn btn-danger">Add to cart</a>
             </div>
+
         </div>
 
+        <!-- Returns a message if search cannot find products -->
+        <div *ngIf="products?.length == 0" class="alert alert-warning col-md-12" role="alert">
+          No products found.
+        </div>
       </div>
     </div>
   </div>
