@@ -1,24 +1,40 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from 'src/app/service/product.service';
 import { Product } from 'src/app/common/product';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-product-list',
-  // templateUrl: './product-list.component.html',
   templateUrl: './product-list-grid.component.html',
   styleUrls: ['./product-list.component.css']
 })
 export class ProductListComponent implements OnInit {
 
   products: Product[];
-  constructor(private productService: ProductService) { }
+  currentCategoryId: number;
+
+  constructor(private productService: ProductService,
+    private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.listProducts();
+    this.route.paramMap.subscribe(() => {
+      this.listProducts();
+    });
   }
 
   listProducts() {
-    this.productService.retrieveProductList().subscribe(
+
+    //Verify whether 'id' paramter is available to use
+    const hasCategoryId: boolean = this.route.snapshot.paramMap.has('id');
+
+    if (hasCategoryId) {
+      // + symbol converts string to number
+      this.currentCategoryId = +this.route.snapshot.paramMap.get('id');
+    } else {
+      this.currentCategoryId = 1;
+    }
+
+    this.productService.retrieveProductList(this.currentCategoryId).subscribe(
       data => {
         this.products = data;
       }

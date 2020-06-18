@@ -9,12 +9,17 @@ import { Product } from '../common/product';
 })
 export class ProductService {
 
-  private baseUrl = 'http://localhost:8080/api/products?size=100';
+  private baseUrl = 'http://localhost:8080/api/products';
 
   constructor(private httpClient: HttpClient) { }
 
-  retrieveProductList(): Observable<Product[]> {
-    return this.httpClient.get<GetResponse>(this.baseUrl).pipe(
+  retrieveProductList(categoryId: number): Observable<Product[]> {
+
+    // build URL based on category ID
+    const searchUrl = `${this.baseUrl}/search/findByCategoryId?id=${categoryId}`;
+    console.log(searchUrl);
+
+    return this.httpClient.get<GetResponse>(searchUrl).pipe(
       map(response => response._embedded.products)
     );
   }
