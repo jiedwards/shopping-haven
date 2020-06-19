@@ -1,0 +1,16 @@
+<div class="product-detail-section">
+  <div class="container-fluid">
+
+    <img style="margin-top: 100px" src="{{ product.imageUrl }}" class="detail-img">
+
+    <h4> {{ product.name }}</h4>
+    <h5> {{ product.unitPrice | currency: 'GBP' }}</h5>
+    <a href='#' class="btn btn-danger">Add to cart</a>
+
+    <hr>
+    <h5>Description</h5>
+    <p> {{ product.description }}</p>
+
+    <a routerLink="/products" class="mt-5 btn btn-primary">Return to product page</a>
+  </div>
+</div>
