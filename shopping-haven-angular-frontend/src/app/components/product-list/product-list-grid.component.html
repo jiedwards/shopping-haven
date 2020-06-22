@@ -16,11 +16,11 @@
             </a>
 
             <a routerLink="/products/{{ product.id }}">
-            <h2>{{ product.name }}</h2>
+              <h2>{{ product.name }}</h2>
             </a>
-            
+
             <div class="price">{{ product.unitPrice | currency:'GBP' }}</div>
-            <a href="#" class="btn btn-danger">Add to cart</a>
+            <button (click)="addToCart(product)" class="btn btn-danger btn-sm">Add to cart</button>
           </div>
 
         </div>
@@ -30,6 +30,46 @@
           No products found.
         </div>
       </div>
+
+      <!-- pagination footer begin -->
+      <div class="footer-pagination">
+        <div class="row">
+          <div class="col-md-6">
+
+            <div class="col-md-6">
+              <div class="row-inline">
+                <div class="col-md-9" style="padding-left: 30%">
+
+                  <ngb-pagination [(page)]="thePageNumber" 
+                                  [pageSize]="thePageSize" 
+                                  [collectionSize]="theTotalElements"
+                                  [maxSize]="5"
+                                  [boundaryLinks]="true"
+                                  (pageChange)="listProducts()">
+
+                  </ngb-pagination>
+                </div>
+
+                <div class="col-md-3 mt-2" style="text-align: right;">
+                  <span class="mr-2">Page Size</span>
+
+                  <select (change)="updatePageSize($event.target.value)">
+                    <option>5</option>
+                    <option selected="true">10</option>
+                    <option>25</option>
+                    <option>50</option>
+                  </select>
+                </div>
+
+              </div>
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- pagination footer end -->
     </div>
   </div>
 </div>
