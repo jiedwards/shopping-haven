@@ -5,7 +5,7 @@
 
     <h4> {{ product.name }}</h4>
     <h5> {{ product.unitPrice | currency: 'GBP' }}</h5>
-    <a href='#' class="btn btn-danger">Add to cart</a>
+    <button (click)="addToCart()" class="btn btn-danger btn-sm">Add to cart</button>
 
     <hr>
     <h5>Description</h5>
