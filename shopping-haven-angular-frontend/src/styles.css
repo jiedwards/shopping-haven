@@ -747,7 +747,7 @@ table.table.table-bordered {
 }
 
 table.table.table-bordered th {
-  BACKGROUND: #0da8e4;
+  background: #fc4848;
   color: #fff;
   font-size: 14px;
   padding: 7px
