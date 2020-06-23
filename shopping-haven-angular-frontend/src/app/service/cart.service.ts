@@ -40,12 +40,37 @@ export class CartService {
     this.computerCartTotals();
 
   }
+
+  decrementQuantity(theCartItem: CartItem) {
+    theCartItem.quantity -= 1;
+
+    if (theCartItem.quantity === 0) {
+      this.removeItem(theCartItem);
+    }
+    else {
+      this.computerCartTotals();
+    }
+  }
+
+  removeItem(theCartItem: CartItem) {
+    // find index of item in array, remove if found
+    const itemIndex = this.cartItems.findIndex(tempCartItem => tempCartItem.id == theCartItem.id);
+
+    if (itemIndex > -1) {
+      // splice removes at the index in place
+      this.cartItems.splice(itemIndex, 1);
+      
+      this.computerCartTotals();
+    }
+
+  }
+
   computerCartTotals() {
     let totalCartPrice: number = 0;
     let totalCartQuantity: number = 0;
 
     this.cartItems.forEach(cartItem => {
-      totalCartPrice += cartItem.quantity * cartItem.unitPrice;
+      totalCartPrice += Number((cartItem.quantity * cartItem.unitPrice).toFixed(2));
       totalCartQuantity += cartItem.quantity;
     });
 
