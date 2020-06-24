@@ -72,7 +72,7 @@
             <div class="col-md-9">
               <div class="input-space">
                 <select formControlName="region">
-                  <option>To do</option>
+                  <option>West Midlands</option>
                 </select>
               </div>
             </div>
@@ -92,7 +92,7 @@
             <div class="col-md-9">
               <div class="input-space">
                 <select formControlName="country">
-                  <option>To do</option>
+                  <option>United Kingdom</option>
                 </select>
               </div>
             </div>
@@ -139,11 +139,11 @@
           </div>
 
           <div class="row">
-            <div class="col-md-3"> <label>Country</label></div>
+            <div class="col-md-3"> <label>Region</label></div>
             <div class="col-md-9">
               <div class="input-space">
-                <select formControlName="country">
-                  <option>To do</option>
+                <select formControlName="region">
+                  <option>United Kingdom</option>
                 </select>
               </div>
             </div>
@@ -219,7 +219,9 @@
             <div class="col-md-9">
               <div class="input-space">
                 <select formControlName="expirationMonth">
-                  <option>To do</option>
+                  <option *ngFor="let month of paymentCardMonths">
+                      {{ month }}
+                  </option>
                 </select>
               </div>
             </div>
@@ -229,8 +231,10 @@
             <div class="col-md-3"> <label>Expiration Year</label></div>
             <div class="col-md-9">
               <div class="input-space">
-                <select formControlName="expirationYear">
-                  <option>To do</option>
+                <select formControlName="expirationYear" (change)="handleMonthsAndYears()">
+                    <option *ngFor="let year of paymentCardYears">
+                        {{ year }}
+                    </option>
                 </select>
               </div>
             </div>
