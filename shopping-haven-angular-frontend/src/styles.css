@@ -264,7 +264,6 @@ input.au-input.au-input-xl {
   line-height: 43px;
   color: #fff;
   border-radius: 30px;
-  border: 1px solid #0da8e4;
   float: left;
   margin-top: 7px;
   padding-left: 17px
@@ -293,7 +292,6 @@ input.au-input.au-input-xl {
   right: 0;
   min-width: 95px;
   color: #fff;
-  border: 1px solid #205b8d;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 43px;
@@ -707,8 +705,6 @@ label.date {
   top: -1px;
   width: 9px;
   height: 15px;
-  border: solid #0da8e4;
-  border-width: 0 4px 4px 0;
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
   border-radius: 2px;
@@ -796,12 +792,6 @@ table.table.table-bordered th {
  * ----------------------------
  */
 
-.btn-info {
-  color: #fff;
-  background-color: #0da8e4 !important;
-  border-color: #0da8e4 !important
-}
-
 a.primary-btn {
   background: #05143f;
   padding: 7px 20px;
@@ -811,11 +801,6 @@ a.primary-btn {
   border-radius: 2px;
   font-size: 14px;
   margin-top: 5px
-}
-
-a.primary-btn:hover {
-  background: #0da8e4;
-  color: #fff
 }
 
 .active-link {
@@ -1091,7 +1076,6 @@ footer ul li {
     right: 10px;
     min-width: 85px;
     color: #fff;
-    border: 1px solid #205b8d;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     border-radius: 0;
@@ -1134,7 +1118,6 @@ footer ul li {
     line-height: 30px;
     color: #fff;
     border-radius: 30px;
-    border: 1px solid #205b8d;
     float: left;
     margin-top: 9px;
     padding-left: 12px
